@@ -1,4 +1,5 @@
-# opengi-katas-feb-2024
+# OpenGI Katas - Flex Exams [Feb 2024]
+
 ## Contents
 * [Business Case](#business-case)
 * [Requirements](#requirements)
