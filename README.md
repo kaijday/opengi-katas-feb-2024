@@ -11,6 +11,8 @@
 ## Business Context
 ## Requirements
 
+_For the original requirements, please see [here](./original_requirements/original_requirements.md)_
+
 ### Functional Requirements
 ### Non Functional Requirements
 
