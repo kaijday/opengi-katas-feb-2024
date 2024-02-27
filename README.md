@@ -14,6 +14,14 @@
 _For the original requirements, please see [here](./original_requirements/original_requirements.md)_
 
 ### Functional Requirements
+
+- **User management**: for admin users to be able to manage other system administrators and roles
+- **Exam management**: for administrators to be able to create exams and preview exams
+- **Question management**: for administrators to be able to create and manage exam questions, set scores, score calculations
+
+[TODO]
+
+### Functional Requirements
 ### Non Functional Requirements
 
 ## Architecture
