@@ -1,4 +1,4 @@
-# ADR 2: Template
+# ADR 2: Micro Frontends
 **Date:** 28/02/2024
 
 ## Status
