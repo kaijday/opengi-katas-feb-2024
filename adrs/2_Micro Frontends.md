@@ -2,7 +2,7 @@
 **Date:** 28/02/2024
 
 ## Status
-Proposed
+Adopted
 
 ## Context
 Micro Frontends is an architectural pattern that decomposes a user interface into smaller, independent, and loosely-coupled components that can be developed, deployed, and scaled independently. This allows teams to work on different parts of the application simultaneously, reduces the complexity of the development process enabaling  greater flexibility, scalability, and maintainability in user interface development.
