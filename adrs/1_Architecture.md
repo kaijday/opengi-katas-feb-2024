@@ -1,4 +1,4 @@
-# ADR 0: Template
+# ADR 1: Template
 **Date:** 27/03/2023
 
 ## Status
