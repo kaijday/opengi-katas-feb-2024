@@ -2,7 +2,7 @@
 **Date:** 27/03/2023
 
 ## Status
-Proposed / Confirmed / Declined
+Proposed / Adopted  / Declined
 
 ## Context
 TBD
