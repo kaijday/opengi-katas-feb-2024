@@ -35,10 +35,36 @@ _For the original requirements, please see [here](./original_requirements/origin
 - **Support**: There should be 1st level, 24/7, support
 
 ## Architecture
-### Characteristics
-During the requirements analysis phase, we identified several architectural characteristics that  are  significant for the system. We grouped them into driving and implicit characteristics.
+
+During the requirements analysis phase, we identified several architectural characteristics that are significant for the system. We grouped them into driving and implicit characteristics.
+
 Driving and implicit characteristics are important to identify the most preferred architecture style or combination of them.
+
 #### Driving characteristics
-  * Performance - the amount of time it takes for the system to process a business requiest.
-  * Availibility - the amount  of uptime of a system
-  * Data Integrity - data across the system is correct and there is no data loss in the system
+
+| Characteristic | Description |
+|--|--|
+| Performance | Performance is essential to provide a responsive and user friendly experience |
+| Scalability | The system needs to be scalable, so that it can cope with large demand of circa 1000 users |
+| Data Integrity | Data across the system must be kept correct, there must be no loss across the system to maintain integrity in the exam certificates issues. Data also includes sensitive information such as ID, so must be kept secure |
+| Evolvability | The system will need to be open to new features and services to add new functionality without disrupting existing operations |
+
+### Implicit characteristics
+
+| Characteristic | Description |
+|--|--|
+| Availability | The system must be available at all times, with 24/7 availability. The system will be multi-region meaning no downtime will be acceptable as the system must be accessable world-wide at all times |
+| Changeability | The system needs to be easy to add to later on, as well as be easy to customise so that the branding of SSS can be used across the platform |
+| Security | Parts of the system need to be secure and whitelisted to certain people only as well as keeping secure user data  |
+
+### Decision
+
+The team picked three of the most important characteristics, Configurability, Performance and Scalability and came to the conclusion that an **event-driven architecture** would best suit the system. This would allow for features to be easily added, the system to be very scalable and to perform well.
+
+![Architecture Decision](./architecture/architecture_selection.png)
+
+### Architecture Decision Records
+
+- [**ADR-1**](./adrs/1_architecture.md) - Use Event-Driven Architecture Style
+- [**ADR-2**](./adrs/2_micro_frontends.md) - Use Micro Front-Ends for...?
+- [**ADR-2**](./adrs/3_message_broker.md) - Use Message Based Queue for ...?
