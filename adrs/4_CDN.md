@@ -1,4 +1,4 @@
-# ADR 4: Cloud Content Delivery Network
+# ADR 4: Use Cloud Content Delivery Network
 **Date:** 28/02/2024
 
 ## Status
