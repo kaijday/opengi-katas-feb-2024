@@ -9,6 +9,7 @@
    * [Architecture Decision Records](#architecture-decision-records)
 
 ## Business Context
+SSS GmbH, a prominent certification body in Germany, conducts 30,000 exams annually across various sectors. They provide FLEX EXAMS for remote testing and collaborate with Pearson VUE for Test Center Exams. Challenges with the current third-party exam system, including downtime and slow support, prompt SSS to seek a new solution. The objective is an in-house, scalable online exam system aligning with SSS's vision for robust and customizable solutions. The goal is to enhance efficiency, reliability, and business diversification.
 ## Requirements
 
 _For the original requirements, please see [here](./original_requirements/original_requirements.md)_
