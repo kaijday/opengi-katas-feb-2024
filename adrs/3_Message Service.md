@@ -1,4 +1,4 @@
-# ADR 0: Use Message Service for Event Driven Architecture
+# ADR 3: Use Message Service for Event Driven Architecture
 **Date:** 28/02/2024
 
 ## Status
