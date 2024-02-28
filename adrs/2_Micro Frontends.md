@@ -1,4 +1,4 @@
-# ADR 2: Micro Frontends
+# ADR 2: Use Micro Frontends for the web applications
 **Date:** 28/02/2024
 
 ## Status
