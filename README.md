@@ -65,6 +65,6 @@ The team picked three of the most important characteristics, Configurability, Pe
 
 ### Architecture Decision Records
 
-- [**ADR-1**](./adrs/1_architecture.md) - Use Event-Driven Architecture Style
+- [**ADR-1**](./adrs/1_architecture.md) - Use Event-Driven Microservices Architecture
 - [**ADR-2**](./adrs/2_micro_frontends.md) - Use Micro Front-Ends for the web applications
 - [**ADR-2**](./adrs/3_message_broker.md) - Use Message Based Queue for ...?
