@@ -7,7 +7,7 @@
    * [Characteristics](#characteristics)
    * [Architectural Style](#architectural-style)
    * [Architecture Decision Records](#architecture-decision-records)
-
+   * [Architectural Principals](#architecture-principals)
 ## Business Context
 SSS GmbH, a prominent certification body in Germany, conducts 30,000 exams annually across various sectors. They provide FLEX EXAMS for remote testing and collaborate with Pearson VUE for Test Center Exams. Challenges with the current third-party exam system, including downtime and slow support, prompt SSS to seek a new solution. The objective is an in-house, scalable online exam system aligning with SSS's vision for robust and customizable solutions. The goal is to enhance efficiency, reliability, and business diversification.
 ## Requirements
@@ -70,3 +70,13 @@ The team picked three of the most important characteristics, Configurability, Pe
 - [**ADR-2**](./adrs/2_micro_frontends.md) - Use Micro Front-Ends for the Web Applications
 - [**ADR-3**](./adrs/3_Message Service.md) - Use Message Service for Event Driven Architecture
 - [**ADR-4**](./adrs/4_CDN.md) - Use Cloud Content Delivery Network
+
+
+### Architectural Principals
+- **Cloud native** - design the system  to take full advantage of the cloud. 
+- **Design for scale** - when designing systems, think about scalability by breaking down components for flexible growth. Use scalable technologies and consider asynchronous design for better performance.
+- **Automate everything** - prioritize automation by incorporating it seamlessly into the core design. Ensure the system is built with automation in mind from the beginning, covering automated builds, deployments, testing, monitoring, and alerting.
+- **APIs are potential products** - develop APIs with the mindset of creating valuable products. Consider customer needs, emphasize user experience, and ensure ease of use, for external consumers and internal systems or developers.
+- **Strategic Adaptability** - build adaptable solutions, balancing innovation with a careful consideration of potential dependencies, customizing the design to benefit from the chosen technology.
+- **Zero-downtime deployments** - ensure smooth deployments with zero downtime. 
+- **Secure by design** - prioritize security integration from the beginning. Incorporate security as a fundamental part of the development process.
