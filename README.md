@@ -10,7 +10,7 @@
    * [Architectural Style](#architectural-style)
    * [Architecture Decision Records](#architecture-decision-records)
    * [Architectural Principals](#architecture-principals)
-   * Architecture Diagrams
+   * [Architecture Diagrams](#architecture-diagrams)
    * Deployment
 * Development plan
   * Development team   
@@ -88,3 +88,10 @@ The team picked three of the most important characteristics, Configurability, Pe
 - **Strategic Adaptability** - build adaptable solutions, balancing innovation with a careful consideration of potential dependencies, customizing the design to benefit from the chosen technology.
 - **Zero-downtime deployments** - ensure smooth deployments with zero downtime. 
 - **Secure by design** - prioritize security integration from the beginning. Incorporate security as a fundamental part of the development process.
+
+### Architecture Diagrams
+In order to visualize, describe and communicate the software architecture  for the system, we will use C4 model. In  ubiquitous language for the C4 diagrams, software system is made up of one or more containers (applications and data stores), each of which contains one or more components, which in turn are implemented by one or more code elements (classes, interfaces, objects, functions, etc).More info for the C4 Modelling approach can be find [here]([./original_requirements/original_requirements.md](https://c4model.com/)https://c4model.com/)_
+
+#### Level 1 - System Context
+
+A System Context Diagram is a visual representation at a high level, ilustrating a system or software application within its broader context. It shows the interactions between the system and external parts, like  users, other systems, thirt party integrations or data sources.
