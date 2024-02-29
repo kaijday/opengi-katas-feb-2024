@@ -70,7 +70,7 @@ The team picked three of the most important characteristics, Configurability, Pe
 - [**ADR-2**](./adrs/2_micro_frontends.md) - Use Micro Front-Ends for the Web Applications
 - [**ADR-3**](./adrs/3_Message_Service.md)  - Use Message Service for Event Driven Architecture
 - [**ADR-4**](./adrs/4_CDN.md) - Use Cloud Content Delivery Network
-
+- [**ADR-5**](./adrs/5_Kubernetes.md) - Use Kubernetes to Deploy and Run Microservices
 
 ### Architectural Principals
 - **Cloud native** - design the system  to take full advantage of the cloud. 
