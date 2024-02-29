@@ -68,7 +68,7 @@ The team picked three of the most important characteristics, Configurability, Pe
 
 - [**ADR-1**](./adrs/1_architecture.md) - Use Event-Driven Microservices Architecture
 - [**ADR-2**](./adrs/2_micro_frontends.md) - Use Micro Front-Ends for the Web Applications
-- [**ADR-3**](./adrs/3_Message Service.md) - Use Message Service for Event Driven Architecture
+- [**ADR-3**](./adrs/3_Message_Service.md)  - Use Message Service for Event Driven Architecture
 - [**ADR-4**](./adrs/4_CDN.md) - Use Cloud Content Delivery Network
 
 
