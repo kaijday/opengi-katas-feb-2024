@@ -94,7 +94,7 @@ In order to visualize, describe and communicate the software architecture  for t
 
 #### Level 1 - System Context diagram
 
-A System Context Diagram is a visual representation at a high level, ilustrating a system or software application within its broader context. It shows the interactions between the system and external parts, like  users, other systems, thirt party integrations or data sources.
+*A System Context Diagram is a visual representation at a high level, ilustrating a system or software application within its broader context. It shows the interactions between the system and external parts, like  users, other systems, thirt party integrations or data sources.*
 The system has many-many integration points:
  * User(proctor, admin user or candidate) that interacts with the system through the web application in the browser or through the mobile application.
  * Google Business to verify the identity of the user who logs into the application
@@ -104,10 +104,15 @@ The system has many-many integration points:
 ![System Context](diagrams/system_context.png)
 
 #### Level 2 - Container diagram
-The Container diagram illustrates the overall structure of the software architecture and the distribution of responsibilities within it.
+*The Container diagram illustrates the overall structure of the software architecture and the distribution of responsibilities within it.*
+
 User integration with the system is facilitated through two web applications: *Flex Exam Management UI*, *Flex Exam UI*, and a *mobile application*.
 We will use Xamarin as cross platform for building Android and iOS apps, as the mobile application will not have demanding user interaction, will be used for video recording mostly.
 To create and manage questions and exams, we are introducing *Exam Management* and *Question Management Services*. These services will store logs for user actions using the *Auditing Service*, which is responsible for both storing and displaying the logs.
 *Exam Tracking* service is responsible for taking and monitoring Exams. It will interact with the *Video recorder* service to enable video streming during the exams and storing the recordings.
 *File uploader* will stores the user identification documents, and  have *Data Purging* will make sure that all the user realted data is deleted after defined time.
 ![ Container](diagrams/container.png)
+
+#### Level 3 -Component diagram 
+*The Component diagram shows how a container is made up of a number of "components", what each of those components are, their responsibilities and the technology/implementation details.*
+
