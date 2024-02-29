@@ -95,6 +95,7 @@ In order to visualize, describe and communicate the software architecture  for t
 #### Level 1 - System Context diagram
 
 *A System Context Diagram is a visual representation at a high level, ilustrating a system or software application within its broader context. It shows the interactions between the system and external parts, like  users, other systems, thirt party integrations or data sources.*
+
 The system has many-many integration points:
  * User(proctor, admin user or candidate) that interacts with the system through the web application in the browser or through the mobile application.
  * Google Business to verify the identity of the user who logs into the application
