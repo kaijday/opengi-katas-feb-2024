@@ -92,7 +92,7 @@ The team picked three of the most important characteristics, Configurability, Pe
 ### Architecture Diagrams
 In order to visualize, describe and communicate the software architecture  for the system, we will use C4 model. In  ubiquitous language for the C4 diagrams, software system is made up of one or more containers (applications and data stores), each of which contains one or more components, which in turn are implemented by one or more code elements (classes, interfaces, objects, functions, etc).More info for the C4 Modelling approach can be find [here]([./original_requirements/original_requirements.md](https://c4model.com/)https://c4model.com/)_
 
-#### Level 1 - System Context
+#### Level 1 - System Context diagram
 
 A System Context Diagram is a visual representation at a high level, ilustrating a system or software application within its broader context. It shows the interactions between the system and external parts, like  users, other systems, thirt party integrations or data sources.
 The system has many-many integration points:
@@ -102,3 +102,6 @@ The system has many-many integration points:
  * Send Grid - used to build email template and send emails
  * Salesforce - enables the identification and validation of candidates applying for exams
 ![System Context](diagrams/system_context.png)
+
+#### Level 2 - Container diagram
+![ Container](diagrams/container.png)
