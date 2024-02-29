@@ -16,6 +16,7 @@ We will use Kubernetes to deploy, run and orchestrate our micro services.
 - Can configure deployment to be zero downtime
 - Can route internal traffic without calls over the web, for performance
 - Easy to auto-scale to meet traffic demands
+- We can use a Cloud environment, such as Azure or AWS to ease the setup and maintanence of the Kubernetes Cluster
 
 ### Negative
 - Increased complexity to set-up the cluster
