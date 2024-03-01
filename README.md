@@ -160,6 +160,10 @@ The straightforward file uploading process involves the Candidate and Proctoring
 ![file_uploader](diagrams/file_uploader.png)
 
 ### Deployment
-When designing a software architecture, it's important to plan how it will be developed.A well-organized development process, with the help of automation, allows for quick changes while keeping the product quality in check.
-
+When designing a software architecture, it's important to plan how it will be developed. A well-organized development process, with the help of automation, allows for quick changes while keeping the product quality in check. We plan to establish two stable environments, production and  non-production tasks. 
+The main components of these environments are:
+* Microservices Runtime: For running microservices, we will use Kubernetes as the tool to efficiently handle resources. Kubernetes comes with built-in auto scalers and internal load balancers, making it a great fit for meeting our needs for scaling and flexibility.
+* Message Broker: To support an event-driven architecture effectively, we will use  message broker is imperative. We recommend  using a cloud messaging system.
+* Network: Access to the network should be facilitated through Public Load Balancers with built-in firewalls capable of handling external threats and internal failures.The firewall will be resposible for whitelisting IP adresses also.
+* Database: The database type choise will be a development team decision but to achieve a highly scalable and available system , we are recomending a NoSQL  database.
 ![deployment](diagrams/deployment_viewpoint.png)
