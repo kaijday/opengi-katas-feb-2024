@@ -150,8 +150,13 @@ Video Streaming intoduces two micro front ends, one for the candidates and one f
 ![video_stream](diagrams/video_stream.png)
 
 **Chat Service**
+
+The Candidate and Proctoring micro frontends facilitate chat functionality and real-time communication between candidates and proctors. When a chat begins, the Chat microservice generates a socket ID through the Web Socket Service and forwards it to the initiator. The Chat Processing function receives message notifications from the queue and transmits the information to the web socket service.
 ![chat_service](diagrams/chat_service.png)
+
 **File uploader**
+
+The straightforward file uploading process involves the Candidate and Proctoring micro front ends, which communicate with the File Uploader microservice. This microservice stores the files in blob storage and triggers a message notification to the queue when a new file/image is ready for processing. The File Processing function subscribes to the message queue, responding to each notification by retrieving the image and sending it to the Content Delivery Network (CDN). The Proctoring micro front end can then access the uploaded files from the CDN.
 ![file_uploader](diagrams/file_uploader.png)
 
 
