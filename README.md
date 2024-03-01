@@ -166,4 +166,6 @@ The main components of these environments are:
 * Message Broker: To support an event-driven architecture effectively, we will use  message broker is imperative. We recommend  using a cloud messaging system.
 * Network: Access to the network should be facilitated through Public Load Balancers with built-in firewalls capable of handling external threats and internal failures.The firewall will be resposible for whitelisting IP adresses also.
 * Database: The database type choise will be a development team decision but to achieve a highly scalable and available system , we are recomending a NoSQL  database.
+* We propose initially employing multi-zone deployment within a single region.
+* 
 ![deployment](diagrams/deployment_viewpoint.png)
