@@ -120,3 +120,11 @@ To create and manage questions and exams, we are introducing *Exam Management* a
 ![ Email_sending*](diagrams/email_sending.png)
 **Question and exam management**
 ![question](diagrams/question_exam_management.png)
+**Video Stream**
+![video_stream](diagrams/video_stream.png)
+**Chat Service**
+![chat_service](diagrams/chat_service.png)
+**File uploader**
+![file_uploader](diagrams/file_uploader.png)
+
+
