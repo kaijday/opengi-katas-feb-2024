@@ -95,6 +95,7 @@ The team picked three of the most important characteristics, Configurability, Pe
 - [**ADR-5**](./adrs/5_Kubernetes.md) - Use Kubernetes to Deploy and Run Microservices
 
 ### Architectural Principals
+
 - **Cloud native** - design the system  to take full advantage of the cloud. 
 - **Design for scale** - when designing systems, think about scalability by breaking down components for flexible growth. Use scalable technologies and consider asynchronous design for better performance.
 - **Automate everything** - prioritize automation by incorporating it seamlessly into the core design. Ensure the system is built with automation in mind from the beginning, covering automated builds, deployments, testing, monitoring, and alerting.
@@ -104,28 +105,35 @@ The team picked three of the most important characteristics, Configurability, Pe
 - **Secure by design** - prioritize security integration from the beginning. Incorporate security as a fundamental part of the development process.
 
 ### Architecture Diagrams
-In order to visualize, describe and communicate the software architecture  for the system, we will use C4 model. In  ubiquitous language for the C4 diagrams, software system is made up of one or more containers (applications and data stores), each of which contains one or more components, which in turn are implemented by one or more code elements (classes, interfaces, objects, functions, etc).More info for the C4 Modelling approach can be find [here]([./original_requirements/original_requirements.md](https://c4model.com/)https://c4model.com/)_
+
+In order to visualize, describe and communicate the software architecture  for the system, we will use C4 model. In  ubiquitous language for the C4 diagrams, software system is made up of one or more containers (applications and data stores), each of which contains one or more components, which in turn are implemented by one or more code elements (classes, interfaces, objects, functions, etc). More info for the C4 Modelling approach can be find [here](https://c4model.com/)_
 
 #### Level 1 - System Context diagram
 
 *A System Context Diagram is a visual representation at a high level, ilustrating a system or software application within its broader context. It shows the interactions between the system and external parts, like  users, other systems, thirt party integrations or data sources.*
 
 The system has many-many integration points:
+
  * User(proctor, admin user or candidate) that interacts with the system through the web application in the browser or through the mobile application.
  * Google Business to verify the identity of the user who logs into the application
  * Jira - provides the ability for support contact in case of any issues with the system
  * Send Grid - used to build email template and send emails
  * Salesforce - enables the identification and validation of candidates applying for exams
+
 ![System Context](diagrams/system_context.png)
 
 #### Level 2 - Container diagram
 *The Container diagram illustrates the overall structure of the software architecture and the distribution of responsibilities within it.*
 
 User integration with the system is facilitated through two web applications: *Flex Exam Management UI*, *Flex Exam UI*, and a *mobile application*.
+
 We will use Xamarin as cross platform for building Android and iOS apps, as the mobile application will not have demanding user interaction, will be used for video recording mostly.
+
 To create and manage questions and exams, we are introducing *Exam Management* and *Question Management Services*. These services will store logs for user actions using the *Auditing Service*, which is responsible for both storing and displaying the logs.
 *Exam Tracking* service is responsible for taking and monitoring Exams. It will interact with the *Video recorder* service to enable video streming during the exams and storing the recordings.
+
 *File uploader* will stores the user identification documents, and  have *Data Purging* will make sure that all the user realted data is deleted after defined time.
+
 ![ Container](diagrams/container.png)
 
 #### Level 3 - Component diagram 
@@ -133,39 +141,47 @@ To create and manage questions and exams, we are introducing *Exam Management* a
 
 **Question and exam management**
 
-We are introdusing two micro frontends for the question and exam management flows.The micro front ends will comunicate with the Exam Management API and Question Management API. Each of the microservices will have separate databases.Exam and Question management will adding  message with audit information to the message queue. Auditing microservice will be a consumer of the message queue and will get the messages, process it and store in the database.  
+We are introdusing two micro frontends for the question and exam management flows.The micro front ends will comunicate with the Exam Management API and Question Management API. Each of the microservices will have separate databases.Exam and Question management will adding  message with audit informationto the message queue. Auditing microservice will be a consumer of the message queue and will get the messages, process it and store in the database.  
 
 ![question](diagrams/question_exam_management.png)
 
 **Email sending**
 
 We have established two separate flows in this container, creating the email template and sending the email.
+
 The email creation flow  begins with the Flow Exam Management UI, showcasing the Email Management micro front end. This front end is designed to facilitate the admin user's interaction with the interface, enabling them to generate email templates. The Email Management API receives these templates from the micro front end and stores them in the database.
+
 On the other hand, the email sending process commences with the Flex Exam UI, which features the Exam Micro front end. This component is responsible for presenting an optimal user interface to candidates while they take the exam. Once a candidate completes the exam, the front end invokes an endpoint from the Exam Tracking API, which undertakes the task of calculating the score. Email Tracking is communicate with the Email Managment API resposible for sending messages with the email template filled with content to the message queue. The system incorporates a function that leverages integration with SendGrid as a third-party provider to send the emails.
+
 ![ Email_sending*](diagrams/email_sending.png)
 
 **Video Stream**
 
 Video Streaming intoduces two micro front ends, one for the candidates and one for the proctors. Video processing microservice, is responsible for encoding and processing the video that comes from the micro frontends and mobile applications and sending Just in time encoded video direct to the media streamer. Encoded videos will be uploaded to Blob Storage to be saved. We will use Cloud content Streaming service to get the uploaded videos and sends it to cloud CDN.
+
 ![video_stream](diagrams/video_stream.png)
 
 **Chat Service**
 
 The Candidate and Proctoring micro frontends facilitate chat functionality and real-time communication between candidates and proctors. When a chat begins, the Chat microservice generates a socket ID through the Web Socket Service and forwards it to the initiator. The Chat Processing function receives message notifications from the queue and transmits the information to the web socket service.
+
 ![chat_service](diagrams/chat_service.png)
 
 **File uploader**
 
 The straightforward file uploading process involves the Candidate and Proctoring micro front ends, which communicate with the File Uploader microservice. This microservice stores the files in blob storage and triggers a message notification to the queue when a new file/image is ready for processing. The File Processing function subscribes to the message queue, responding to each notification by retrieving the image and sending it to the Content Delivery Network (CDN). The Proctoring micro front end can then access the uploaded files from the CDN.
+
 ![file_uploader](diagrams/file_uploader.png)
 
 ### Deployment
 When designing a software architecture, it's important to plan how it will be developed. A well-organized development process, with the help of automation, allows for quick changes while keeping the product quality in check. We plan to establish two stable environments, production and  non-production tasks. 
+
 The main components of these environments are:
+
 * Microservices Runtime: For running microservices, we will use Kubernetes as the tool to efficiently handle resources. Kubernetes comes with built-in auto scalers and internal load balancers, making it a great fit for meeting our needs for scaling and flexibility.
 * Message Broker: To support an event-driven architecture effectively, we will use  message broker is imperative. We recommend  using a cloud messaging system.
 * Network: Access to the network should be facilitated through Public Load Balancers with built-in firewalls capable of handling external threats and internal failures.The firewall will be resposible for whitelisting IP adresses also.
 * Database: The database type choise will be a development team decision but to achieve a highly scalable and available system , we are recomending a NoSQL  database.
 * We propose initially employing multi-zone deployment within a single region.
-* 
+
 ![deployment](diagrams/deployment_viewpoint.png)
