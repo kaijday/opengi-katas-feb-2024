@@ -51,17 +51,19 @@ During the requirements analysis phase, we identified some key work flows by dif
 
 ![Workflows](./diagrams/workflows.png)
 
-During the requirements analysis phase, we identified several architectural characteristics that are significant for the system. We grouped them into driving and implicit characteristics.
-
-Driving and implicit characteristics are important to identify the most preferred architecture style or combination of them.
-
 ### Context Map
 
 [TODO]
 
 ![ContextMap](./diagrams/context_map.png)
 
-### Driving characteristics
+### Architectural Style
+
+During the requirements analysis phase, we identified several architectural characteristics that are significant for the system. We grouped them into driving and implicit characteristics.
+
+Driving and implicit characteristics are important to identify the most preferred architecture style or combination of them.
+
+#### Driving characteristics
 
 | Characteristic | Description |
 |--|--|
@@ -70,7 +72,7 @@ Driving and implicit characteristics are important to identify the most preferre
 | Data Integrity | Data across the system must be kept correct, there must be no loss across the system to maintain integrity in the exam certificates issues. Data also includes sensitive information such as ID, so must be kept secure |
 | Evolvability | The system will need to be open to new features and services to add new functionality without disrupting existing operations |
 
-### Implicit characteristics
+#### Implicit characteristics
 
 | Characteristic | Description |
 |--|--|
@@ -78,7 +80,7 @@ Driving and implicit characteristics are important to identify the most preferre
 | Changeability | The system needs to be easy to add to later on, as well as be easy to customise so that the branding of SSS can be used across the platform |
 | Security | Parts of the system need to be secure and whitelisted to certain people only as well as keeping secure user data  |
 
-### Decision
+#### Decision
 
 The team picked three of the most important characteristics, Configurability, Performance and Scalability and came to the conclusion that an **event-driven architecture** would best suit the system. This would allow for features to be easily added, the system to be very scalable and to perform well.
 
