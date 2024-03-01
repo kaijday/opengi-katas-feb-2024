@@ -53,8 +53,6 @@ During the requirements analysis phase, we identified some key work flows by dif
 
 ### Context Map
 
-[TODO]
-
 ![ContextMap](./diagrams/context_map.png)
 
 ### Architectural Style
@@ -184,3 +182,42 @@ The main components of these environments are:
 * Database: The database type choise will be a development team decision but to achieve a highly scalable and available system , we are recomending a NoSQL database.
 
 ![deployment](diagrams/deployment_viewpoint.png)
+
+## Development Plan
+
+We propose the adoption of a Domain-Driven Design (DDD) approach to the software development teams. DDD emphasizes a collaborative approach, focusing on sharing the understanding of a business between development teams and stakeholders. 
+
+### Development Teams
+
+We have identified a [context map](#context-map) during the requirements analysis, that splits out the project into smaller domains. Each of these domains are independant, and can be developed by individual teams who would gain specialized knowledge in that area and will be the owner of that area of the system. Each development team could have one or more of these domains identified. To do this fairly we would score the complexities of the domains and distribute them fairly, also identifying the links between them.
+
+The development teams would need to have:
+- A range of developers who are comfortable working front-end and back-end. It would be beneficial if they were full-stack developers, but not necessarily required.
+- A product owner, who would be the domain expert and the stakeholder for the development team.
+- A quality analyst, who will ensure a good quality of output from the development team and lead the testing stategy with QAs from other teams. They would feed into the strategy of tests done in the development team (automated tests, manual testing) and help with writing those tests.
+
+We would also recommend implementing a DevOps/Platform team, because of some of the complex choices in tooling used (such as K8s). They would guide the development teams to provision the infrastucture for the overall project and also for the development teams.
+
+### Milestones
+
+#### MVP 1
+
+During the first stage, we will start with the project kick-off and planning. This will involve defining the project objectives and scope, assembling the development teams and assigning the domains from the context-map, setting up collaboration tools (such as a communication channel, and DevOps tools such as Azure DevOps), a creating an initial development environment and creating user stories and backlogs ready for implementation.
+
+Then development would begin, and we would develop the essential parts of the product to intoduce a potential launch to the market. This would include the UI, management systems, proctoring systems and third party integrations for verification. The development would be done in slices, and the stakeholders would be asked to provide feedback as the product progresses.
+
+#### MVP 2
+
+Open up the product for limited testing, to a small external user-base, to gather feedback. During this stage we would fix any issues would and integrate the user feedback, before doing a full-launch of the product. 
+
+#### MVP 3
+
+The second stage would then involve implementing the less essential third party integrations, such as the JIRA report a bug integration. We would also finish and launch the mobile application to allow proctors another way to verify the integrity of an exam. We would also launch the chat service, to allow candidates and proctors to be closer during the exam.
+
+Another part of this stage would be to implement monitoring of the product, so we can track the health of the product, the performance of the product and also how friendly the user experience is.
+
+#### Continuous Feedback and Iteration
+
+After the full launch of all the planned features, we would then continue to iterate. This would involve bug fixes, improvements to the system and performance improvements to the infrastructure. 
+
+New features can be planned and added from this stage onwards.
