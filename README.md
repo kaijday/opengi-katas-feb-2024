@@ -130,10 +130,16 @@ To create and manage questions and exams, we are introducing *Exam Management* a
 
 #### Level 3 -Component diagram 
 *The Component diagram shows how a container is made up of a number of "components", what each of those components are, their responsibilities and the technology/implementation details.*
-**Email sending**
-![ Email_sending*](diagrams/email_sending.png)
+
 **Question and exam management**
+
+We are introdusing two micro frontends for the question and exam management flows.The micro front ends will comunicate with the Exam Management API and Question Management API. Each of the microservices will have separate databases.Exam and Question management will adding  message with audit information to the message queue. Auditing microservice will be a consumer of the message queue and will get the messages, process it and store in the database.  
+
 ![question](diagrams/question_exam_management.png)
+
+**Email sending**
+
+![ Email_sending*](diagrams/email_sending.png)
 **Video Stream**
 ![video_stream](diagrams/video_stream.png)
 **Chat Service**
