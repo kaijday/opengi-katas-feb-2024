@@ -12,9 +12,9 @@
    * [Architectural Principals](#architecture-principals)
    * [Architecture Diagrams](#architecture-diagrams)
    * [Deployment](#deployments)
-* Development plan
-  * Development team   
-  * Milestones
+* [Development plan](#development-plan)
+  * [Development team](#development-teams)
+  * [Milestones](#milestones)
  
 ## Business Context
 SSS GmbH, a prominent certification body in Germany, conducts 30,000 exams annually across various sectors. They provide FLEX EXAMS for remote testing and collaborate with Pearson VUE for Test Center Exams. Challenges with the current third-party exam system, including downtime and slow support, prompt SSS to seek a new solution. The objective is an in-house, scalable online exam system aligning with SSS's vision for robust and customizable solutions. The goal is to enhance efficiency, reliability, and business diversification.
