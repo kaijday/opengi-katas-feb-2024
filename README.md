@@ -53,6 +53,8 @@ During the requirements analysis phase, we identified some key work flows by dif
 
 ### Context Map
 
+During this phase we also identified the contexts, from the given requirements and the workflows mapped out. We have also mapped dependencies between domains. The relationships between the domains would then be defined in the MVP 1 (Project planning) stage.
+
 ![ContextMap](./diagrams/context_map.png)
 
 ### Architectural Style
