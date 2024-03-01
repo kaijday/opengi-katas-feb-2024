@@ -11,7 +11,7 @@
    * [Architecture Decision Records](#architecture-decision-records)
    * [Architectural Principals](#architecture-principals)
    * [Architecture Diagrams](#architecture-diagrams)
-   * Deployment
+   * [Deployment](#deployments)
 * Development plan
   * Development team   
   * Milestones
@@ -128,7 +128,7 @@ To create and manage questions and exams, we are introducing *Exam Management* a
 *File uploader* will stores the user identification documents, and  have *Data Purging* will make sure that all the user realted data is deleted after defined time.
 ![ Container](diagrams/container.png)
 
-#### Level 3 -Component diagram 
+#### Level 3 - Component diagram 
 *The Component diagram shows how a container is made up of a number of "components", what each of those components are, their responsibilities and the technology/implementation details.*
 
 **Question and exam management**
@@ -159,4 +159,7 @@ The Candidate and Proctoring micro frontends facilitate chat functionality and r
 The straightforward file uploading process involves the Candidate and Proctoring micro front ends, which communicate with the File Uploader microservice. This microservice stores the files in blob storage and triggers a message notification to the queue when a new file/image is ready for processing. The File Processing function subscribes to the message queue, responding to each notification by retrieving the image and sending it to the Content Delivery Network (CDN). The Proctoring micro front end can then access the uploaded files from the CDN.
 ![file_uploader](diagrams/file_uploader.png)
 
+### Deployment
+When designing a software architecture, it's important to plan how it will be developed.A well-organized development process, with the help of automation, allows for quick changes while keeping the product quality in check.
 
+![deployment](diagrams/deployment_viewpoint.png)
