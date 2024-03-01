@@ -5,7 +5,7 @@
 * [Requirements](#requirements)
 * [Architecture](#architecture)
    * [Workflows](#workflows)
-   * Contex map
+   * [Context Map](#context-map)
    * [Characteristics](#characteristics)
    * [Architectural Style](#architectural-style)
    * [Architecture Decision Records](#architecture-decision-records)
