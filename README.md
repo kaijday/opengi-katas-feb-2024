@@ -116,4 +116,7 @@ To create and manage questions and exams, we are introducing *Exam Management* a
 
 #### Level 3 -Component diagram 
 *The Component diagram shows how a container is made up of a number of "components", what each of those components are, their responsibilities and the technology/implementation details.*
-
+**Email sending**
+![ Email_sending*](diagrams/email_sending.png)
+**Question and exam management**
+![question](diagrams/question_exam_management.png)
