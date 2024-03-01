@@ -4,7 +4,7 @@
 * [Business Case](#business-case)
 * [Requirements](#requirements)
 * [Architecture](#architecture)
-   * Work flows
+   * [Workflows](#workflows)
    * Contex map
    * [Characteristics](#characteristics)
    * [Architectural Style](#architectural-style)
@@ -45,11 +45,23 @@ _For the original requirements, please see [here](./original_requirements/origin
 
 ## Architecture
 
+### Workflows
+
+During the requirements analysis phase, we identified some key work flows by different actors within the system. These work flows are how the actors interact with the system end to end in certain scenarios and helps us map the different components of the system.
+
+![Workflows](./diagrams/workflows.png)
+
 During the requirements analysis phase, we identified several architectural characteristics that are significant for the system. We grouped them into driving and implicit characteristics.
 
 Driving and implicit characteristics are important to identify the most preferred architecture style or combination of them.
 
-#### Driving characteristics
+### Context Map
+
+[TODO]
+
+![ContextMap](./diagrams/context_map.png)
+
+### Driving characteristics
 
 | Characteristic | Description |
 |--|--|
