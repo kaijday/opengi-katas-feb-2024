@@ -233,7 +233,21 @@ New features can be planned and added from this stage onwards.
 
 ## Disaster Recovery
 
-[TODO]
+To ensure that we're prepared for potential disasters and equipped to handle them effectively, we've defined procedures and strategies with both preventive measures to reduce the chances of disasters occurring, and reactive measures to minimize their impact and streamline the recovery process.
+
+### Objectives
+-	Recovery Time Objective (RTO) - maximum acceptable downtime for the system, it defines the time within which the system should be restored after a disaster -	Our maximum RTO is set at 24 hours. In the event of a complete system outage, we will need  24 hours for complete recovery, testing, and full operation. Our recovery strategy involves prioritizing critical components of the system. The first priority is the AKS, while concurrently, we will restore the databases using continuous backups, minimizing the risk of data loss. Once the AKS is operational, we will proceed to deploy services and micro front ends, prioritizing proctoring functionality followed by management features. All infrastructure will be managed as code, with provisioning and restoration handled through pipelines.
+-	Recovery Point Objective (RPO) - determines the acceptable data loss in case of a disaster. It specifies the maximum tolerable amount of data loss measured in time - Continuous backups guarantee that data is consistently backed up, ensuring it remains up-to-date. We continuously save and backup data, meaning that in the event of a disaster, our data will be current and backed up, minimizing the risk of data loss. If the system is inaccessible exams might be postponed, leading to a loss in revenueor or rescheduling.
+-	
+###  Critical resources hosted in Cloud - Backup and Replication Strategy
+-	Azure Kubernetes Service (AKS) - infrastructure as code is one of our architecture principles, and the AKS clusters will be provisioned using a pipeline that will enable us to ensure we can quickly recreate our AKS environment if necessary. Code for pipelines will be stored in version-controlled repository. 
+-	Key Vault – will be used to story and managed secrets. Soft delete and purge protection will be enabled for the key vault and for the most critical ones if needed, we will have backup strategy defined 
+-	Storage Account – Data stored in the storage account is important and we need high availability for the system so we will use Geo-Zone-redundant storage (GZRS) as replication options.
+-	Azure Cosmos DB – We will enable the continuous backup feature for Azure Cosmos DB to enable automatically incremental backups of the data and that will ensure the backup is always up to date. If needed for same database that contains  critical business data , we can enable cross region replication.
+-	Azure Function – We will store the code in version - controlled repository and deploy the function via pipeline, so they can be deployed in any time when needed.
+-	Content Delivery Network – Enabling continuous and efficient proctoring is one of the basic requirements for the system so CDN will service critical content. We recommend using Cloud CDN that comes with highly resiliency and distribution, and we will enable the multi region redundancy, to ensure that even if one region becomes unavailable, content can be server.
+-	Service Bus – the resource will be provision by code and if case of disaster we will provision it by pipeline run. At first stage we will not do backup for the data, and will try to minimize the impact of data loss by code, like retiring functionality as no critical business scenario will be affected.
+
 
 ## Costs
 
