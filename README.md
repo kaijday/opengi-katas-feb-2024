@@ -227,6 +227,10 @@ Another part of this stage would be to implement monitoring of the product, so w
 
 #### Continuous Feedback and Iteration
 
+After the full launch of all the planned features, we would then continue to iterate. This would involve bug fixes, improvements to the system and performance improvements to the infrastructure. 
+
+New features can be planned and added from this stage onwards.
+
 ## Disaster Recovery
 
 [TODO]
@@ -234,7 +238,3 @@ Another part of this stage would be to implement monitoring of the product, so w
 ## Costs
 
 [TODO]
-
-After the full launch of all the planned features, we would then continue to iterate. This would involve bug fixes, improvements to the system and performance improvements to the infrastructure. 
-
-New features can be planned and added from this stage onwards.
