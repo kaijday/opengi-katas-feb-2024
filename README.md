@@ -261,12 +261,12 @@ To ensure that we're prepared for potential disasters and equipped to handle the
   
 ###  Critical resources hosted in Cloud - Backup and Replication Strategy
 -	Azure Kubernetes Service (AKS) - infrastructure as code is one of our architecture principles, and the AKS cluster will be provisioned using a pipeline that will enable us to ensure we can quickly recreate our AKS environment if necessary. Code for pipelines will be stored in version-controlled repository. 
--	Key Vault – will be used to story and managed secrets. Soft delete and purge protection will be enabled for the key vault and for the most critical ones if needed, we will have backup strategy defined. 
--	Storage Account – Data stored in the storage account is important and we need high availability for the system so we will use Geo-zone-redundant storage (GZRS)  as replication options.
+-	Azure Key Vault – will be used to story and managed secrets. Soft delete and purge protection will be enabled for the key vault and for the most critical ones if needed, we will have backup strategy defined. 
+-	Azure Storage Account – Data stored in the storage account is important and we need high availability for the system so we will use Geo-zone-redundant storage (GZRS)  as replication options.
 -	Azure Cosmos DB – We will enable the continuous backup feature for Azure Cosmos DB to enable automatically incremental backups of the data and that will ensure the backup is always up to date. If needed for same database that contains  critical business data, we will enable cross region replication.
 -	Content Delivery Network – Enabling continuous and efficient proctoring is one of the basic requirements for the system so CDN will service critical content. We recommend using Cloud CDN that comes with highly resiliency and distribution, and we will enable the multi region redundancy, to ensure that even if one region becomes unavailable, content can be server.
--	Service Bus – the resource will be provision by code and if case of disaster we will provision it by pipeline run. At first stage we will not do backup for the data, and will try to minimize the impact of data loss by code, like retiring functionality as no critical business scenario will be affected.
-- Media Services, Azure SignalR Service, Load Balancer,	Azure DDos Protection, Azure Monitor, Azure Firewall,	Azure Function - We will follow the principle infrastracture as code, managing and updating cloud resources through code. The code will be stored in a version-controlled repository, and the resources will be deployed via pipelines, allowing for deployment whenever necessary.
+-	Azure Service Bus – the resource will be provision by code and if case of disaster we will provision it by pipeline run. At first stage we will not do backup for the data, and will try to minimize the impact of data loss by code, like retiring functionality as no critical business scenario will be affected.
+-Azure Media Services, Azure SignalR Service, Azure Load Balancer,	Azure DDos Protection, Azure Monitor, Azure Firewall,	Azure Function - We will follow the principle infrastracture as code, managing and updating cloud resources through code. The code will be stored in a version-controlled repository, and the resources will be deployed via pipelines, allowing for deployment whenever necessary.
 
 
 
