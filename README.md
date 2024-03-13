@@ -190,7 +190,27 @@ The main components of these environments are:
 
 ### Technology
 
-[TODO]
+To develop the solution we would develop the solution in the Cloud, using Azure. We have chosen Azure because the Development team would be using primarily a Microsoft Stack and Azure would be the best solution for hosting this. Some of the azure technologies we would utilise would be:
+
+- **Azure Kubernetes Service (AKS)**: For running the Microservices and UI.
+- **Azure Service Bus**: For queuing messages in our event-driven architecture. We would primarily use Topics.
+- **Azure Firewall**: To protect against bad actors and also to limit parts of the system by IP whitelisting, such as the proctoring system.
+- **Azure Load Balance**: To manage routes externally into the system.
+- **Azure DDoS Protection**: To protect the system against Denial Of Service attacks.
+- **Microsoft CDN**: To serve all front-end assets, video streaming and content. This would allows us to meet the requires response times by having Zones worldwide.
+- **Azure Media Services**: To encode and transform the live video feeds of candidates into watchable and saveable content to be viewed by proctors.
+- **Azure SignalR**: Primary for the live chat feature, to allow instant communication between candidate and proctor, but also for live exam timing. The timer would be help server-side.
+- **Azure Storage Accounts**: For holding file(s) and video streams uploaded by the candidate.
+- **Azure Cosmos DB**: For holding the data used by the microservices, such as exam questions, exams and email templates.
+- **Azure Functions**: To execute the events in the event-driven system.
+- **Azure Monitor**: For logging and system health.
+- **Azure Key Vault**: To store secret keys, certificates and sensitive information.
+
+The system would be built on a Microsoft stack, using C# (.NET Core) for the Microservices, and Azure Functions. The UI would be written in Blazor.
+
+All infrastructure would be written as Infrastructure as Code, using Azure Bicep. This will aide with [Disaster Recovery](#disaster-recovery).
+
+For testing we would utilise Playwright for our integration and critical path testing, JEST for our API testing, and K6 for Load Testing. Critical tests would be run on a schedule, to highlight any issues quickly. Integration and API tests would be run as part of CI/CD to make sure the code being deployed is as expected. Load Testing would be run for large feature deployments, to make sure we are still hitting our non-functional page load requirements, as well as on a schedule to ensure smaller changes are not effecting performance.
 
 ## Development Plan
 
