@@ -12,9 +12,12 @@
    * [Architectural Principals](#architecture-principals)
    * [Architecture Diagrams](#architecture-diagrams)
    * [Deployment](#deployments)
+   * [Technology](#technology)
 * [Development plan](#development-plan)
   * [Development team](#development-teams)
   * [Milestones](#milestones)
+* [Disaster Resovery](#disaster-recovery)
+* [Costs](#costs)
  
 ## Business Context
 SSS GmbH, a prominent certification body in Germany, conducts 30,000 exams annually across various sectors. They provide FLEX EXAMS for remote testing and collaborate with Pearson VUE for Test Center Exams. Challenges with the current third-party exam system, including downtime and slow support, prompt SSS to seek a new solution. The objective is an in-house, scalable online exam system aligning with SSS's vision for robust and customizable solutions. The goal is to enhance efficiency, reliability, and business diversification.
@@ -185,6 +188,10 @@ The main components of these environments are:
 
 ![deployment](diagrams/deployment_viewpoint.png)
 
+### Technology
+
+[TODO]
+
 ## Development Plan
 
 We propose the adoption of a Domain-Driven Design (DDD) approach to the software development teams. DDD emphasizes a collaborative approach, focusing on sharing the understanding of a business between development teams and stakeholders. 
@@ -219,6 +226,14 @@ The second stage would then involve implementing the less essential third party 
 Another part of this stage would be to implement monitoring of the product, so we can track the health of the product, the performance of the product and also how friendly the user experience is.
 
 #### Continuous Feedback and Iteration
+
+## Disaster Recovery
+
+[TODO]
+
+## Costs
+
+[TODO]
 
 After the full launch of all the planned features, we would then continue to iterate. This would involve bug fixes, improvements to the system and performance improvements to the infrastructure. 
 
