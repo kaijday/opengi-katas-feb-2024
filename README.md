@@ -91,12 +91,12 @@ The team picked three of the most important characteristics, Configurability, Pe
 
 ### Architecture Decision Records
 
-- [**ADR-1**](./adrs/1_architecture.md) - Use Event-Driven Microservices Architecture
-- [**ADR-2**](./adrs/2_micro_frontends.md) - Use Micro Front-Ends for the Web Applications
-- [**ADR-3**](./adrs/3_Message_Service.md)  - Use Message Service for Event Driven Architecture
+- [**ADR-1**](./adrs/1_Architecture.md) - Use Event-Driven Microservices Architecture
+- [**ADR-2**](./adrs/2_Micro%20Frontends.md) - Use Micro Front-Ends for the Web Applications
+- [**ADR-3**](./adrs/3_Message%20Service.md)  - Use Message Service for Event Driven Architecture
 - [**ADR-4**](./adrs/4_CDN.md) - Use Cloud Content Delivery Network
 - [**ADR-5**](./adrs/5_Kubernetes.md) - Use Kubernetes to Deploy and Run Microservices
-- [**ADR-6**](./adrs/6_Key_Vault.md) - Use Key Vault for Secrets and Credentials
+- [**ADR-6**](./adrs/6_Key%20Vault.md) - Use Key Vault for Secrets and Credentials
 ### Architectural Principals
 
 - **Cloud native** - design the system  to take full advantage of the cloud. 
