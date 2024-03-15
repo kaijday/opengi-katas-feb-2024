@@ -268,9 +268,8 @@ To ensure that we're prepared for potential disasters and equipped to handle the
 -	**Azure Service Bus** – the resource will be provision by code and if case of disaster we will provision it by pipeline run. At first stage we will not do backup for the data, and will try to minimize the impact of data loss by code, like retiring functionality as no critical business scenario will be affected.
 - **Azure Media Services**, **Azure SignalR Service**, **Azure Load Balancer**,	**Azure DDos Protection**, **Azure Monitor**, **Azure Firewall**,	**Azure Function** - We will follow the principle infrastracture as code, managing and updating cloud resources through code. The code will be stored in a version-controlled repository, and the resources will be deployed via pipelines, allowing for deployment whenever necessary.
 
-
-
-
 ## Costs
 
-[TODO]
+Estimated costs for running the system, per month, per environment, would be [£4,102.73](https://azure.com/e/1a064db6325a46179137fd1c540c4c82). With a development and production environment, this would be £8205.46 per month. The development environment could be scaled down to reduce costs, outside of load testing.
+
+This would amount to a cost of £49,232.76 per environment, per year.
