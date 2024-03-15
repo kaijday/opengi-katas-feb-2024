@@ -1,4 +1,4 @@
-#ADR 6: Use Key Vault for Secrets and Credentials
+# ADR 6: Use Key Vault for Secrets and Credentials
 
 ## Status
 Adopted 
