@@ -273,3 +273,5 @@ To ensure that we're prepared for potential disasters and equipped to handle the
 Estimated costs for running the system, per month, per environment, would be [£4,102.73](https://azure.com/e/1a064db6325a46179137fd1c540c4c82). With a development and production environment, this would be £8205.46 per month. The development environment could be scaled down to reduce costs, outside of load testing.
 
 This would amount to a cost of £49,232.76 per environment, per year.
+
+There is an option to reserve instances of some of the Cloud Technologies in use. Reserving for a year would bring the cost down to £4,051.27 per month. Reserving for 3 years would bring the cost down to £4,023.98. Over a year these would be a saving off £617.52 and £945 a year.
